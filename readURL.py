@@ -1,9 +1,16 @@
 import urllib.request
+import re
+from collections import Counter
+URL = input("enter the URL:")
 
 try:
-    URL = "http://networksciencelab.com"
-    with urllib.request.urlopen(URL) as doc:
-        html = doc.read()
-        print(html)
+    doc = urllib.request.urlopen(URL)
 except:
-    print("cloud not open")
+    print("ERROR")
+    quit()
+
+html = doc.read().decode().lower()
+
+html = re.findall(r"\w+",html)
+print("===========RESULT=============")
+print(Counter(html).most_common(50))
