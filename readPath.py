@@ -11,8 +11,10 @@ result =[]
 for root, path, files in os.walk(path):
     for name in files:
         with open(join(root,name), mode='r') as f:
-            print(f.readline())
-            result.append(f.name)
+            for line in f.readlines():
+                if "l'" in line:
+                    print(f.readline())
+                    result.append(f.name)
 
 
 
