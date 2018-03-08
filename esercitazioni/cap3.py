@@ -32,4 +32,5 @@ for name, url in links:
         quit()
 
 if not broken:
+    print("OK!!!!!!")
     print(links)
