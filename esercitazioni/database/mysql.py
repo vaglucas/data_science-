@@ -17,6 +17,7 @@ conn.commit()
 
 """
 MongoDB
+import table for mysql to mongoDB
 """
 
 client1 = MongoClient()
