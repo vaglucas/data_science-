@@ -14,8 +14,10 @@ for result in results:
     j.append(dict(list(zip(field_names, result))))
 conn.commit()
 
-print(j)
 
+"""
+MongoDB
+"""
 
 client1 = MongoClient()
 db = client1["dsdb"]
