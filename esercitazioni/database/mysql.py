@@ -10,19 +10,18 @@ results = list(cur.fetchall())
 num_fields = len(cur.description)
 field_names = [i[0] for i in cur.description]
 j = []
-k=[]
 for result in results:
-    j.append(list(zip(field_names, result)))
+    j.append(dict(list(zip(field_names, result))))
 conn.commit()
-for r in j:
-    k.append(dict(r))
+
+print(j)
 
 
 client1 = MongoClient()
 db = client1["dsdb"]
 auth_user = db["auth_user"]
 
-inserts = auth_user.insert_many(k)
+inserts = auth_user.insert_many(j)
 inserts.inserted_ids
 
 everyone = auth_user.find()
