@@ -1,5 +1,6 @@
 from pymongo import MongoClient
-
+#init connection
+#"C:\Program Files\MongoDB\Server\3.6\bin\mongod.exe"
 client1 = MongoClient()
 
 #client1 = mongo.MongoClient("localhost",27017)
