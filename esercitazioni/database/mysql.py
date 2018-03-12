@@ -13,13 +13,10 @@ j = []
 for result in results:
     j.append(dict(list(zip(field_names, result))))
 conn.commit()
-
-
 """
 MongoDB
 import table for mysql to mongoDB
 """
-
 client1 = MongoClient()
 db = client1["dsdb"]
 auth_user = db["auth_user"]
