@@ -75,13 +75,13 @@ calcolo dell interesse semplice e composto per 30 anni con un tasso di interesse
 RATE = .0375
 TERM = 30
 simple = (RATE*np.ones(TERM)).cumsum()
-print(simple)
 compund = ((1+RATE)*np.ones(TERM)).cumprod()-1
-print(compund)
+print("simple: ", simple," composto: ",compund)
+"""
 np.save("sap.npy",sap)
 sapcopy = np.load("sap.npy",mmap_mode="r")
 print(sapcopy)
-
+"""
 
 """
 le costanti difinisco le proprieta
