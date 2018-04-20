@@ -50,6 +50,7 @@ fall = np.greater(stocks[0],stocks[1])
 print(sap[fall])
 
 stocks[1,0]= np.nan
+print("IS A NAN")
 print(np.isnan(stocks))
 stocks[np.isnan(stocks)]=0
 print(stocks)
