@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 
 
-URL = input("enter the URL:")
+URL = 'https://e-gov.betha.com.br/transparencia/01035-002/con_comprasdiretas.faces'#input("enter the URL:")
 
 try:
     doc = urllib.request.urlopen(URL)
@@ -15,6 +15,16 @@ except:
 
 soup = BeautifulSoup(doc)
 
+print("start for media id")
+t = ''
+for tag in soup.findAll("table"):
+    if 'tr' in str(tag.get('tbody')):
+        t = str((tag.get('tr')))
+
+
+print(t)
+
+print("fine for media id")
 links = [(link.string,link["href"])
             for link in soup.findAll("a")
             if link.has_attr("href")]
