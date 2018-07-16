@@ -17,7 +17,7 @@ borders.add_edge("Italia","Svizera",dist=6)
 borders.add_edge("Italia","Austria",dist=5)
 borders.add_edge("Italia","Malta",dist=4)
 print(len(borders))
-print(borders.nodes())
+print(borders.nodes(data=True))
 print(borders.node)
 print(borders.edges())
 print(borders["Italia"])
@@ -27,3 +27,8 @@ degrees = pd.DataFrame(list(borders.degree()),columns=("country","degree")).set_
 #degrees.sort_index("degree")
 degrees2 = degrees.sort_values(by=["degree"]).tail(5)
 print(degrees2)
+
+
+print(list(nx.connected_components(borders)))
+print(nx.eigenvector_centrality_numpy(borders))
+print(nx.closeness_centrality(borders))
